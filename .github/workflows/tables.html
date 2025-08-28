@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffe066 0%, #ffb347 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: rgba(255, 140, 0, 0.92);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            padding: 40px 32px 32px 32px;
+            border: 3px solid #fffbe7;
+            position: relative;
+        }
+        .container::before {
+            content: "📚";
+            font-size: 60px;
+            position: absolute;
+            top: -30px;
+            left: 30px;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        h2 {
+            text-align: center;
+            color: #fffbe7;
+            margin-bottom: 28px;
+            letter-spacing: 2px;
+            font-size: 2.2em;
+            text-shadow: 2px 2px 8px #e0c80080;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px #e0c80033;
+            z-index: 1;
+        }
+        th, td {
+            border: 1px solid #e0c800;
+            padding: 16px 10px;
+            text-align: center;
+            font-size: 1.08em;
+            position: relative;
+            z-index: 1;
+            transition: background 0.2s;
+        }
+        th {
+            background: linear-gradient(90deg, #ffe066 60%, #fffbe7 100%);
+            color: #333;
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+        tr:nth-child(even) td {
+            background: #fffbe7;
+        }
+        tr:nth-child(odd) td {
+            background: #fff;
+        }
+        td[colspan] {
+            background: #ffe066;
+            color: #444;
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+        }
+        /* Highlight subject cells on hover */
+        td:not([colspan]):hover {
+            background: #ffe066cc;
+            color: #d2691e;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 0 8px #ffe06688;
+        }
+        /* Break cell vertical text with animation */
+        .rotate {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            background: #ffe066 !important;
+            color: #d2691e !important;
+            font-weight: bold;
+            font-size: 1.2em;
+            letter-spacing: 2px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #e0c80044;
+            animation: pulse 1.5s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 2px 8px #e0c80044; }
+            100% { box-shadow: 0 4px 16px #e0c80088; background: #fff176; }
+        }
+        /* Responsive design */
+        @media (max-width: 700px) {
+            .container {
+                padding: 10px 2px;
+            }
+            table, th, td {
+                font-size: 0.92em;
+                padding: 8px 2px;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+        /* Footer style */
+        footer {
+            text-align: center;
+            color: #fffbe7;
+            margin-top: 30px;
+            font-size: 1em;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 4px #e0c80080;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🏫My Class Timetable🏫</h2>
+        <table id="timetable">
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+            <tr>
+                <td>08:00 - 09:00</td>
+                <td>Mathematics</td>
+                <td>English</td>
+                <td>Science</td>
+                <td>Mathematics</td>
+                <td>Social Studies</td>
+            </tr>
+            <tr>
+                <td>09:00 - 10:00</td>
+                <td>English</td>
+                <td>Mathematics</td>
+                <td>Social Studies</td>
+                <td>Science</td>
+                <td>Mathematics</td>
+            </tr>
+            <tr>
+                <td>10:00 - 10:30</td>
+                <td class="rotate" colspan="5">Break</td>
+            </tr>
+            <tr>
+                <td>10:30 - 11:30</td>
+                <td>Science</td>
+                <td>Social Studies</td>
+                <td>Mathematics</td>
+                <td>English</td>
+                <td>Science</td>
+            </tr>
+            <tr>
+                <td>11:30 - 12:30</td>
+                <td>Physical Education</td>
+                <td>Art</td>
+                <td>Computer</td>
+                <td>Physical Education</td>
+                <td>Music</td>
+            </tr>
+            <tr>
+                <td>01:30 - 02:30</td>
+                <td>Computer</td>
+                <td>Music</td>
+                <td>Art</td>
+                <td>Computer</td>
+                <td>Physical Education</td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        Made with ❤️ by Me👦
+    </footer>
+    <script>
+        // Add emojis to subjects for all browsers
+        const emojiMap = {
+            "Mathematics": "🧮",
+            "English": "📖",
+            "Science": "🔬",
+            "Social Studies": "🌍",
+            "Physical Education": "🏃",
+            "Art": "🎨",
+            "Computer": "💻",
+            "Music": "🎵"
+        };
+        document.querySelectorAll("#timetable td").forEach(td => {
+            const text = td.textContent.trim();
+            if (emojiMap[text]) {
+                td.textContent = emojiMap[text] + " " + text;
+            }
+        });
+    </script>
+</body>
+</html>

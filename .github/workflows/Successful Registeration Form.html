@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: cornflowerblue;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      width: 350px;
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2980b9;
+    }
+    label {
+      font-weight: bold;
+      color: #333;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+    }
+    input:focus, select:focus {
+      border-color: #2980b9;
+      box-shadow: 0 0 5px #2980b9;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #2980b9;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #1f5c85;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>School Registration</h2>
+    <form action="success.html" method="get">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="fname" required>
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lname" required>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="">-- Select --</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="grade">Grade</label>
+      <input type="number" id="grade" name="grade" min="1" max="12" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</body>
+</html>
